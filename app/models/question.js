@@ -18,4 +18,6 @@ var questionSchema = new Schema({
 
 var Question = mongoose.model('Question', questionSchema);
 
-module.exports = Question;
+module.exports = function () {
+    return Question;
+};

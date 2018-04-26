@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 
 consign()
     .include('app/routes')
+    .then('app/models')
     .then('app/controllers')
     .into(app);
 

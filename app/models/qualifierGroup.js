@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var qualifierGroupSchema = new Schema({
-    name: {type: String, required: true},
-    description: {type: String, required: true},
+    name: {type: String, required: true, unique: true},
+    description: {type: String},
     qualifiers: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Qualifier"
@@ -12,4 +12,6 @@ var qualifierGroupSchema = new Schema({
 
 var QualifierGroup = mongoose.model('QualifierGroup', qualifierGroupSchema);
 
-module.exports = QualifierGroup;
+module.exports = function () {
+    return QualifierGroup;
+};

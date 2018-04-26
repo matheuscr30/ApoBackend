@@ -1,4 +1,4 @@
-const Room = require('../models/room');
+const Room = require('../models/room')();
 
 module.exports.get = function (application, req, res) {
     Room.find({}, function (err, rooms) {
@@ -45,7 +45,7 @@ module.exports.post = function (application, req, res) {
         if (err) {
             if (err.code === 11000)
                 return res.status(409).json({message: "Room already exists"});
-            return res.status(500).json({message: "There was a problem finding the rooms."});
+            return res.status(500).json({message: "There was a problem creating the rooms."});
         }
 
         res.status(200).json({room: result});

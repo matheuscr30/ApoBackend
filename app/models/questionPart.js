@@ -9,4 +9,6 @@ var questionPartSchema = new Schema({
 
 var QuestionPart = mongoose.model('QuestionPartSchema', questionPartSchema);
 
-module.exports = QuestionPart;
+module.exports = function () {
+    return QuestionPart;
+};

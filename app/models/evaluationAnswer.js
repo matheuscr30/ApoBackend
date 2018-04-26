@@ -12,5 +12,7 @@ var evaluationAnswerSchema = new Schema({
 
 var EvaluationAnswer = mongoose.model('EvaluationAnswer', evaluationAnswerSchema);
 
-module.exports = EvaluationAnswer;
+module.exports = function () {
+    return EvaluationAnswer;
+};
 

@@ -11,4 +11,6 @@ var answerSchema = new Schema({
 
 var Answer = mongoose.model('Answer', answerSchema);
 
-module.exports = Answer;
+module.exports = function () {
+    return Answer;
+};

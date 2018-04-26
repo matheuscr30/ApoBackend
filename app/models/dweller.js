@@ -15,4 +15,6 @@ var dwellerSchema = new Schema({
 
 var Dweller = mongoose.model('Dweller', dwellerSchema);
 
-module.exports = Dweller;
+module.exports = function () {
+    return Dweller;
+};

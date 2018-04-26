@@ -17,6 +17,6 @@ var techniqueSchema = new Schema({
 
 var Technique = mongoose.model('Technique', techniqueSchema);
 
-module.exports = Technique;
-
-//RespondentType is a enum
+module.exports = function () {
+    return Technique;
+};

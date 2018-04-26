@@ -16,4 +16,6 @@ var evaluationSchema = new Schema({
 
 var Evaluation = mongoose.model('Evaluation', evaluationSchema);
 
-module.exports = Evaluation;
+module.exports = function () {
+    return Evaluation;
+};

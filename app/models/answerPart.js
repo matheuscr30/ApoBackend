@@ -7,4 +7,6 @@ var answerPartSchema = new Schema({
 
 var AnswerPart = mongoose.model('AnswerPart', answerPartSchema);
 
-module.exports = AnswerPart;
+module.exports = function () {
+    return AnswerPart;
+};

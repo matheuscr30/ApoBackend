@@ -8,4 +8,6 @@ var attributeSchema = new Schema({
 
 var Attribute = mongoose.model('Attribute', attributeSchema);
 
-module.exports = Attribute;
+module.exports = function () {
+    return Attribute;
+};

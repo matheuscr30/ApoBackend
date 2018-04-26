@@ -9,5 +9,7 @@ var qualifierSchema = new Schema({
 
 var Qualifier = mongoose.model('Qualifier', qualifierSchema);
 
-module.exports = Qualifier;
+module.exports = function () {
+    return Qualifier;
+};
 
