@@ -6,6 +6,6 @@ var attributeSchema = new Schema({
     description: {type: String, required: true}
 });
 
-var Attribute = mongoose.model('AttributeSchema', attributeSchema);
+var Attribute = mongoose.model('Attribute', attributeSchema);
 
 module.exports = Attribute;
