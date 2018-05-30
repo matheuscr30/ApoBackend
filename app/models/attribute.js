@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 var attributeSchema = new Schema({
     name: {type: String, required: true},
-    description: {type: String, required: true}
+    description: {type: String}
 });
 
 var Attribute = mongoose.model('Attribute', attributeSchema);

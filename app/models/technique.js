@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const RespondentType = require('../models/respondentType')();
 
 var techniqueSchema = new Schema({
-    name: {type: String, required: true},
+    name: {type: String, required: true, unique: true},
     description: {type: String, required: true},
     respondentType: {
         type: String,
-        enum: ['MORADOR', 'PESQUISADOR'],
+        enum: RespondentType,
         required: true
     },
     categories: [{

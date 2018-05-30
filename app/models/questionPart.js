@@ -7,7 +7,7 @@ var questionPartSchema = new Schema({
     qualifierGroupId: {type: mongoose.Schema.Types.ObjectId, ref: 'QualifierGroup', required: true}
 });
 
-var QuestionPart = mongoose.model('QuestionPartSchema', questionPartSchema);
+var QuestionPart = mongoose.model('QuestionPart', questionPartSchema);
 
 module.exports = function () {
     return QuestionPart;

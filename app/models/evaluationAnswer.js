@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var evaluationAnswerSchema = new Schema({
-    dwellerId: {type: mongoose.Schema.Types.ObjectId, ref: 'Dweller'},
-    evaluationId: {type: mongoose.Schema.Types.ObjectId, ref: 'Evaluation'},
+    dwellerId: {type: mongoose.Schema.Types.ObjectId, ref: 'Dweller', require: true},
+    evaluationId: {type: mongoose.Schema.Types.ObjectId, ref: 'Evaluation', require: true},
     answers: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Answer"

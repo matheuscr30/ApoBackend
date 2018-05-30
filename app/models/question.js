@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const QuestionType = require('../models/questionType')();
 
 var questionSchema = new Schema({
     text: {type: String, required: true},
     ordering: {type: Number, required: true},
     questionType: {
         type: String,
-        enum: ['TEXTO_LIVRE', 'MULTIPLA_ESCOLHA', 'ESCOLHA_UNICA'],
+        enum: QuestionType,
         required: true
     },
     colorScale: {type: Boolean, required: true},

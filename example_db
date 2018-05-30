@@ -1,0 +1,166 @@
+db.qualifiers.insertMany([
+    {
+        "name" : "qual1",
+        "intervalBegin" : 10,
+        "intervalEnd" : 20
+    },
+    {
+        "name" : "qual2",
+        "intervalBegin" : 15,
+        "intervalEnd" : 30
+    },
+    {
+        "name" : "qual3",
+        "intervalBegin" : 30,
+        "intervalEnd" : 50
+    }
+]);
+
+db.qualifiergroups.insertMany([
+    {
+        "name" : "qualgroup1",
+        "description" : "my qualgroup1",
+        "qualifiers" : [
+            ObjectId("5b0ddb1b738e6ce1e4e9da03"),
+        ]
+    },
+    {
+        "name" : "qualgroup2",
+        "description" : "my qualgroup2",
+        "qualifiers" : [
+            ObjectId("5b0ddb1b738e6ce1e4e9da04"),
+        ]
+    }
+]);
+
+db.rooms.insertMany([
+    {
+        "name" : "room1",
+        "description" : "my room1"
+    },
+    {
+        "name" : "room2",
+        "description" : "my room2"
+    },
+    {
+        "name" : "room3",
+        "description" : "my room3"
+    }
+]);
+
+db.attributes.insertMany([
+    {
+        "name" : "attribute1",
+        "description" : "my attribute1"
+    },
+    {
+        "name" : "attribute2",
+        "description" : "my attribute2"
+    },
+    {
+        "name" : "attribute3",
+        "description" : "my attribute3"
+    }
+]);
+
+db.questionparts.insertMany([
+    {
+        "roomId": ObjectId("5b0ddce9738e6ce1e4e9da09"),
+        "attributeId": ObjectId("5b0dddad738e6ce1e4e9da0c"),
+        "qualifierGroupId": ObjectId("5b0ddc78738e6ce1e4e9da07")
+    },
+    {
+        "roomId": ObjectId("5b0ddce9738e6ce1e4e9da0a"),
+        "attributeId": ObjectId("5b0dddad738e6ce1e4e9da0d"),
+        "qualifierGroupId": ObjectId("5b0ddc78738e6ce1e4e9da08")
+    },
+    {
+        "roomId": ObjectId("5b0ddce9738e6ce1e4e9da0b"),
+        "attributeId": ObjectId("5b0dddad738e6ce1e4e9da0e"),
+        "qualifierGroupId": ObjectId("5b0ddc78738e6ce1e4e9da07")
+    }
+]);
+
+db.questions.insertMany([
+    {
+        text: "question1",
+        ordering: 1,
+        questionType: "TEXTO_LIVRE",
+        colorScale: true,
+        questionParts: [
+            ObjectId("5b0dde98738e6ce1e4e9da0f"),
+            ObjectId("5b0dde98738e6ce1e4e9da11")
+        ]
+    },
+    {
+        text: "question2",
+        ordering: 2,
+        questionType: "ESCOLHA_UNICA",
+        colorScale: false,
+        questionParts: [
+            ObjectId("5b0dde98738e6ce1e4e9da10"),
+            ObjectId("5b0dde98738e6ce1e4e9da11")
+        ]
+    }
+]);
+
+db.categories.insertMany([
+    {
+        name: 'category1',
+        description: 'my category1',
+        questions: [
+            ObjectId("5b0ddfaf738e6ce1e4e9da12")
+        ]
+    },
+    {
+        name: 'category2',
+        description: 'my category2',
+        questions: [
+            ObjectId("5b0ddfaf738e6ce1e4e9da13")
+        ]
+    }
+]);
+
+db.techniques.insertMany([
+    {
+        name: 'tecnique1',
+        description: 'my technique 1',
+        respondentType: "MORADOR",
+        categories: [
+            ObjectId("5b0de01a738e6ce1e4e9da15")
+        ]
+    },
+    {
+        name: 'tecnique2',
+        description: 'my technique 2',
+        respondentType: "PESQUISADOR",
+        categories: [
+            ObjectId("5b0de01a738e6ce1e4e9da14")
+        ]
+    }
+]);
+
+db.evaluations.insertMany([
+    {
+        name: 'e1',
+        description: 'e1',
+        zipCode: 'e1',
+        city: 'e1',
+        state: 'e1',
+        country: 'e1',
+        techniques: [
+            ObjectId("5b0de0be738e6ce1e4e9da17")
+        ]
+    },
+    {
+        name: 'e2',
+        description: 'e2',
+        zipCode: 'e2',
+        city: 'e2',
+        state: 'e2',
+        country: 'e2',
+        techniques: [
+            ObjectId("5b0de0be738e6ce1e4e9da16")
+        ]
+    }
+]);
